@@ -1,0 +1,18 @@
+[{
+    "id":"0",
+    "name":"cagar",
+    "date":"2021-05-11T19:38:49.500Z",
+    "state": "En Proceso"
+},
+{
+    "id":"1",
+    "name":"deberes",
+    "date":"2021-05-11T19:38:49.500Z",
+    "state": "Pendiente"
+},
+{
+    "id":"2",
+    "name":"terminar las tareas",
+    "date":"2021-05-11T19:38:49.500Z",
+    "state": "En Proceso"
+}]

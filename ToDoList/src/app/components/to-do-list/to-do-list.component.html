@@ -1,0 +1,30 @@
+<form (ngSubmit)="addToDo(form)" #form=ngForm>
+  <input ngModel name="name" id="name" type="text" placeholder="Nueva tarea...">
+  <input type="datetime-local" ngModel name="date" >
+  <button mat-raised-button color="primary" type="submit">Añadir tarea<mat-icon>add_circle</mat-icon></button>
+</form>
+<table class="todos">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tarea</th>
+      <th>Estado</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos, let i = index">
+      <td><button mat-mini-fab color="accent">{{todo.id}}</button></td>
+      <td>{{todo.name}}</td>
+      <td>
+        <select name="state" id="" ngModel (change)="updateState(todo.id, selectState.value)" #selectState>
+          <option value="" hidden>{{todo.state}}</option>
+          <option [value]="state" *ngFor="let state of states" >{{ state }}</option>
+        </select>
+      </td>
+      <td>{{todo.date | date }}</td>
+      <td><button mat-raised-button color="warn" (click)="removeToDo(todo.id)">Eliminar<mat-icon>delete_forever</mat-icon></button></td>
+    </tr>
+  </tbody>
+</table>
